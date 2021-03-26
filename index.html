@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function ex1(){
+
+            // Creare un array di oggetti: ogni oggetto descriverà 
+            // una bici da corsa con le seguenti proprietà: nome e peso. 
+            // Stampare a schermo la bici con peso minore.   
+
+            const bikes = [
+                { 'name': 'bici 1', 'weight': '20' },
+                { 'name': 'bici 2', 'weight': '22' },
+                { 'name': 'bici 3', 'weight': '15' },
+                { 'name': 'bici 4', 'weight': '21' },
+                { 'name': 'bici 5', 'weight': '18' },
+                { 'name': 'bici 6', 'weight': '12' },
+                { 'name': 'bici 7', 'weight': '28' },
+                { 'name': 'bici 8', 'weight': '30' },
+                { 'name': 'bici 9', 'weight': '16' },
+                { 'name': 'bici 10', 'weight': '23' }
+            ];
+
+            //METODO INGARBUGLIATO PER NON RIFARE QUELLO VISTO A LEZIONE E RIPASSARE
+            let arrWeight = [];
+            let lighterBike;
+            let arrLighters = [];
+
+
+            for (let i = 0; i < bikes.length; i++) {
+
+                const bike = bikes[i];
+                const weight = bike['weight'];
+                arrWeight.push(weight)
+                arrWeight.sort(function (a, b) {
+
+                    return (a - b)
+                })
+                
+                if (weight == arrWeight[0]) {
+
+                    lighterBike = bike;
+                    arrLighters.push(bike)
+                }
+            };  
+
+            const {'name': lightName, 'weight': lightWeight} = arrLighters[(arrLighters.length - 1)]
+            console.log(lightName, lightWeight);
+        };
+
+        function init(){
+
+            ex1();
+        };
+
+        init();
+
+    </script>
+    
+</body>
+</html>
