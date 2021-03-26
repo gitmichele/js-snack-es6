@@ -56,9 +56,69 @@
             console.log(lightName, lightWeight);
         };
 
+        function ex2(){
+
+            // Creare un array di oggetti di squadre di calcio. 
+            // Ogni squadra avrà diverse proprietà: 
+            // nome, punti fatti, falli subiti.
+            // Nome sarà l'unica proprietà da compilare,
+            // le altre saranno tutte settate a 0.
+
+            const teams = [
+                { 'name': 'squadra 1', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 2', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 3', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 4', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 5', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 6', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 7', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 8', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 9', 'points': 0, 'fouls': 0 },
+                { 'name': 'squadra 10', 'points': 0, 'fouls': 0 }
+            ];
+            //--------------------------------------------------------------------------------------------------------------------------------
+            
+            // Generare numeri random al posto degli 0 nelle proprietà:
+            // punti fatti e falli subiti
+            
+            function getRandom(min, max){
+
+                return Math.floor(Math.random() * (max - min + 1)) + min
+            };
+
+            const pointsMin = 40;
+            const foulsMin = 300;
+            const pointsMax = 100;
+            const foulsMax = 500;
+
+            for (let i=0; i<teams.length; i++){
+
+                [teams[i]['points'], teams[i]['fouls']] = [getRandom(pointsMin, pointsMax), getRandom(foulsMin, foulsMax)]
+            };
+
+            console.log(teams);
+            //--------------------------------------------------------------------------------------------------------------------------------
+
+            // Usando la destrutturazione creiamo un nuovo array 
+            // i cui elementi contengono solo nomi e falli subiti 
+            // e stampiamo tutto in console.
+
+            let newArr = [];
+
+            for (let i=0; i<teams.length; i++){
+
+                const newObj = {'name': teams[i].name, 'fouls': teams[i].fouls};
+                newArr.push(newObj)
+            };
+
+            console.log(newArr);
+
+        };
+
         function init(){
 
-            ex1();
+            // ex1();
+            ex2();
         };
 
         init();
