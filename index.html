@@ -30,30 +30,16 @@
             ];
 
             //METODO INGARBUGLIATO PER NON RIFARE QUELLO VISTO A LEZIONE E RIPASSARE
-            let arrWeight = [];
-            let lighterBike;
-            let arrLighters = [];
-
-
             for (let i = 0; i < bikes.length; i++) {
 
                 const bike = bikes[i];
-                const weight = bike['weight'];
-                arrWeight.push(weight)
-                arrWeight.sort(function (a, b) {
+                bikes.sort(function (a, b) {
 
-                    return (a - b)
+                    return (a.weight - b.weight)
                 })
-                
-                if (weight == arrWeight[0]) {
+            };
 
-                    lighterBike = bike;
-                    arrLighters.push(bike)
-                }
-            };  
-
-            const {'name': lightName, 'weight': lightWeight} = arrLighters[(arrLighters.length - 1)]
-            console.log(lightName, lightWeight);
+            console.log(bikes[0]);
         };
 
         function ex2(){
@@ -117,8 +103,8 @@
 
         function init(){
 
-            // ex1();
-            ex2();
+            ex1();
+            // ex2();
         };
 
         init();
