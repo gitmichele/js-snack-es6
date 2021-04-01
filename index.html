@@ -101,10 +101,31 @@
 
         };
 
+        function ex3(array, min, max) {
+
+            // Scrivere una funzione che accetti tre argomenti, un array e due numeri(a più piccolo di b).
+            // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+            // Usiamo i nuovi metodi degli array foreach o filter.
+
+            const filteredArr = array.filter(function(elem, index) {
+
+                if ( index >= min && index <= max ){
+
+                    return elem;
+                }
+            });
+
+            console.log(filteredArr);
+        };
+
         function init(){
 
-            ex1();
+            // ex1();
             // ex2();
+            const ex3Arr = [1, 'word1', 'word2', 2, 'word3', 3, 4, 5, 6, 'word4']
+            const ex3Min = 5;
+            const ex3Max = 6;
+            ex3(ex3Arr, ex3Min, ex3Max)
         };
 
         init();
